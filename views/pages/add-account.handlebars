@@ -1,0 +1,52 @@
+<div class="container tm-mt-big tm-mb-big">
+    <div class="row">
+      <div class="col-xl-9 col-lg-10 col-md-12 col-sm-12 mx-auto">
+        <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+          <div class="row">
+            <div class="col-12">
+              <h2 class="tm-block-title d-inline-block">Add Account</h2>
+            </div>
+          </div>
+          <form action="" class="row tm-edit-product-row tm-edit-product-form">
+            <div class="col-xl-6 col-lg-6 col-md-12">
+              <div class="form-group mb-3">
+                <label for="name">Account Name *</label>
+                <input id="name" name="name" type="text" class="form-control validate" required />
+              </div>
+              <div class="form-group mb-3">
+                <label for="email">Email *</label>
+                <input id="email" name="email" type="email" class="form-control validate" required />
+              </div>
+              <div class="form-group mb-3">
+                <label for="accountType">Account type *</label>
+                <select class="custom-select tm-select-accounts" id="accountType" name="accountType"
+                  aria-placeholder="Select account type" required>
+                  <option value="1">Admin</option>
+                  <option value="2">Customer</option>
+                </select>
+              </div>
+              <div class="form-group mb-3">
+                <label for="password">Password *</label>
+                <input id="password" name="password" type="password" class="form-control validate" required />
+              </div>
+            </div>
+            <div class="col-xl-6 col-lg-6 col-md-12 mx-auto mb-4">
+              <div class="tm-product-img-dummy mx-auto">
+                <i class="fas fa-cloud-upload-alt tm-upload-icon"
+                  onclick="document.getElementById('fileInput').click();"></i>
+              </div>
+              <div class="custom-file mt-3 mb-3">
+                <input id="fileInput" type="file" name="avatar" style="display:none;" />
+                <input type="button" class="btn btn-primary btn-block mx-auto" value="UPLOAD AVATAR"
+                  onclick="document.getElementById('fileInput').click();" />
+              </div>
+            </div>
+            <div class="col-12">
+              <button type="submit" class="btn btn-primary btn-block text-uppercase">Add Account</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  </div>

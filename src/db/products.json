@@ -1,0 +1,23 @@
+[
+    {
+        "Pname":"Lorem Ipsum Product 1",
+        "Pdesc":"Lorem Ipsum Product 1",
+        "Pinstock":550,
+        "Pprice":10,
+        "Cid":"663e0f68b8a25ff47845bbcf"
+    },
+    {
+        "Pname":"Lorem Ipsum Product 2",
+        "Pdesc":"Lorem Ipsum Product 2",
+        "Pinstock":750,
+        "Pprice":15,
+        "Cid":"663e0f68b8a25ff47845bbcf"
+    },
+    {
+        "Pname":"Lorem Ipsum Product 3",
+        "Pdesc":"Lorem Ipsum Product 3",
+        "Pinstock":750,
+        "Pprice":1,
+        "Cid":"663e0f68b8a25ff47845bbd0"
+    }
+]

@@ -1,0 +1,58 @@
+<div class="container mt-5">
+  <div class="row tm-content-row">
+    <div class="col-12 tm-block-col">
+      <div class="tm-bg-primary-dark tm-block tm-block-h-auto">
+        <h2 class="tm-block-title">List of Accounts</h2>
+        <p class="text-white">Accounts</p>
+        <form action="">
+          <select class="custom-select" name="accountType">
+            <option value="0">Select account type</option>
+            <option value="1">Admin</option>
+            <option value="4">Customer</option>
+          </select>
+          <button
+            type="submit"
+            class="btn btn-primary btn-block text-uppercase mt-3"
+          >
+            Filter accounts
+          </button>
+        </form>
+      </div>
+    </div>
+  </div>
+  <!-- row -->
+  <a href="" class="btn btn-primary btn-block text-uppercase mb-3">Add new
+    account</a>
+  <table class="table table-hover tm-table-small tm-product-table">
+    <thead>
+      <tr>
+        <th scope="col">ACCOUNT NAME</th>
+        <th scope="col">ACCOUNT TYPE</th>
+        <th scope="col">EMAIL</th>
+        <th scope="col">&nbsp;</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td class="tm-product-name">Nguyen Van A</td>
+        <td>Admin</td>
+        <td>nguyenvana@gmail.com</td>
+        <td>
+          <a href="#" class="tm-product-delete-link">
+            <i class="far fa-trash-alt tm-product-delete-icon"></i>
+          </a>
+        </td>
+      </tr>
+      <tr>
+        <td class="tm-product-name">Nguyen Van B</td>
+        <td>Customer</td>
+        <td>nguyenvanb@gmail.com</td>
+        <td>
+          <a href="#" class="tm-product-delete-link">
+            <i class="far fa-trash-alt tm-product-delete-icon"></i>
+          </a>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
