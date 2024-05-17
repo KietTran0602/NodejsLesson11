@@ -50,10 +50,12 @@
                 <tbody>
                     {{#each rcategories as |rcategory|}}
                     <tr>
-                        <td class="tm-product-name">{{rcategory.RCname}}</td>
+                        <td class="tm-category-name" data-category-id="{{rcategory._id}}">{{rcategory.RCname}}</td>
                         <td class="text-center">
-                        <a href="#" class="tm-product-delete-link">
-                            <i class="far fa-trash-alt tm-product-delete-icon"></i>
+                        
+                        
+                        <a href="/products/category/{{rcategory._id}}/delete" class="tm-category-delete-link" >
+                            <i data-category-id = "{{rcategory._id}}" class="far fa-trash-alt tm-product-delete-icon"></i>
                         </a>
                         </td>
                     </tr>
@@ -62,9 +64,9 @@
               </table>
             </div>
             <!-- table container -->
-            <button class="btn btn-primary btn-block text-uppercase mb-3">
+            <a href="/products/add-category" class="btn btn-primary btn-block text-uppercase mb-3">
               Add new category
-            </button>
+            </a>
           </div>
         </div>
       </div>

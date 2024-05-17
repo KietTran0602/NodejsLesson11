@@ -9,7 +9,8 @@ export class RcategoryRepo {
 
     static async createItem(Pname,Pdesc,Pinstock,Pprice,Cid){
         const item = new RcategorysModel({
-            RCname
+            RCname,
+            RCdesc
         });
         return await RcategorysModel.create(item);
     }

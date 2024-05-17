@@ -1,6 +1,31 @@
-<script src="js/jquery-3.3.1.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script>
-  $(function () { $(".tm-product-name").on("click", function () {
-  window.location.href = "edit-product.html"; }); });
-</script>
+<script src="/js/jquery-3.3.1.min.js"></script>
+  <script src="/js/bootstrap.min.js"></script>
+  <script>
+    // $(function () { $(".tm-product-name").on("click", function () {
+    //window.location.href = "edit-product.html"; }); });
+
+    //xử lí redirect đến trang chi tiết danh mục
+    $(function () {
+      $(".tm-category-name").on("click", function (event) {
+        const categoryId = event.target.getAttribute("data-category-id");
+        window.location.href = `/products/add-category/${categoryId}`;
+      }
+      );
+    });
+
+    $(function () {
+      $(".tm-category-delete-link").on("click", function (event) {
+        event.preventDefault();
+        const id = event.target.getAttribute("data-category-id");
+
+        //gọi tới url với method delete, yêu cầu xóa danh mục, sau khi xó relaod lại trang
+        $.ajax({
+          url: `/products/category/${id}`,
+          method: "DELETE"
+        }).done(function () {
+          window.location.reload();
+        })
+      })
+    })
+
+  </script>
