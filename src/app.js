@@ -5,6 +5,23 @@ import {CategoryRepo} from "./db/category.js"
 import {ProductRepo} from "./db/products.js"
 import {RcategoryRepo} from "./db/realCategory.js"
 import { RcategorysModel } from "./model/realCategory.models.js";
+import {ProductsModel} from "./model/products.models.js"
+import multer from 'multer';
+
+const multerUploader = multer({
+    // dest: "public/assets/img",
+    storage: multer.diskStorage({
+        destination:function (req, file, cb) {
+            cb(null, 'public/assets/img')
+          },
+        filename: function (req, file, cb) {
+            const originalName = file.originalname;
+            const [name, ext]= originalName.split(".");
+            const filename = `${name}_${Date.now()}.${ext}`;
+            cb(null,filename) //(err, filename)
+          }
+    })
+})
 
 const app = express();
 app.use(express.json());
@@ -139,9 +156,33 @@ app.delete("/products/category/:id", async (req,res)=>{
     });
 });
 
+//add products
 
-app.get("/add-product",(req,res)=>{
-    res.render("add-product");
+app.get("/products/add-product", async (req,res)=>{
+    const categories = await RcategorysModel.find().lean();
+
+    res.render("add-product",{
+        pageCode: "products",
+        categories
+    });
+});
+
+app.post("/products/add-product",multerUploader.single("image"), async (req,res)=>{
+    const data = req.body;
+    const file = req.file;
+    console.log(data);   
+    console.log(file);   
+    const product = new ProductsModel({
+        Pname: data.name,
+        Pdesc: data.desc,
+        Pinstock: data.unitInStock,
+        Pprice: data.price,
+        Cid: data.categoryId,
+        imgUrl:`/assets/img/${file.filename}`
+    });
+    await product.save();
+    
+        res.redirect("/products");
 });
 app.listen(3000, ()=> {
     console.log("app is running on port 3000");

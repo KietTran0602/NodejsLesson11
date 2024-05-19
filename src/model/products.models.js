@@ -8,6 +8,9 @@ const schema1 = new mongoose.Schema({
     Pprice: Number,
     Cid: {
         type: mongoose.Types.ObjectId
+    },
+    imgUrl:{
+        type: String
     }
 });
 
